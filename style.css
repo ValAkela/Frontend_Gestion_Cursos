@@ -1,0 +1,199 @@
+/* Import Google Fonts for a similar bold font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    /* Aseguramos que el body ocupe toda la altura de la pantalla */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px; /* Más padding para pantallas grandes */
+    background-color: #ffffff;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Placeholders styles */
+.placeholder-logo {
+    width: 300px; /* Un poco más grande para 1080p */
+    height: 90px;
+    background-color: #f3f4f6;
+    border: 2px dashed #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.placeholder-characters {
+    width: 600px;
+    height: 700px;
+    background-color: #f3f4f6;
+    border: 2px dashed #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-weight: bold;
+    text-align: center;
+}
+
+.placeholder-hero-logo {
+    width: 500px;
+    height: 150px;
+    background-color: #f3f4f6;
+    border: 2px dashed #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Más separación */
+}
+
+.nav-links a {
+    color: #4b8cb6; /* Light blue */
+    font-size: 1.4rem; /* Fuente más grande para 1080p */
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+}
+
+.nav-links a:hover {
+    color: #005696;
+}
+
+/* Buttons */
+.btn-campus {
+    background-color: #00609c;
+    color: white;
+    padding: 15px 30px; /* Botón más grande */
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem; /* Fuente más grande */
+    transition: background-color 0.3s;
+}
+
+.btn-campus:hover {
+    background-color: #004675;
+}
+
+.btn-outline {
+    background-color: #ffffff;
+    color: #00609c;
+    padding: 15px 30px; /* Botón más grande */
+    border: 2px solid #00609c;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem; /* Fuente más grande */
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #f0f8ff;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 100px; /* Padding ajustado a los lados */
+    max-width: 1700px; /* Más ancho para 1920 */
+    margin: 0 auto;
+    gap: 100px; /* Más separación entre imagen y contenido */
+    flex: 1; /* Ocupa el espacio restante del viewport */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.characters-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 800px; /* Más alto para que se vea bien en 1080p */
+    object-fit: contain;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 5rem; /* Título más imponente */
+    color: #00609c;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 30px; /* Más separación entre los botones */
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 20px 50px;
+    }
+    .hero {
+        padding: 40px 50px;
+        gap: 50px;
+    }
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .characters-img {
+        max-height: 500px;
+    }
+}

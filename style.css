@@ -197,9 +197,9 @@ a {
     }
 }
 
-/* =========================================
-   ESTILOS PARA LOGIN / INICIO DE SESIÓN
-   ========================================= */
+/* ==========================
+   ESTILOS INICIO DE SESIÓN
+   ========================== */
 
 /* Fondo azul para la pantalla de Login */
 .login-body {
@@ -577,3 +577,73 @@ a {
         gap: 12px;
     }
 }
+
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA REGISTRO
+   ========================================= */
+
+.register-container {
+    max-width: 680px;
+    margin: 40px auto;
+}
+
+.register-card {
+    padding: 45px 45px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-wrapper select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: all 0.25s ease;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.input-wrapper select:focus {
+    background-color: #ffffff;
+    border-color: #00609c;
+    box-shadow: 0 0 0 4px rgba(0, 96, 156, 0.15);
+}
+
+.register-options {
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.terms-link {
+    color: #00609c;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.terms-link:hover {
+    color: #003666;
+}
+
+@media (max-width: 680px) {
+    .register-container {
+        max-width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .register-card {
+        padding: 30px 20px;
+    }
+}
+

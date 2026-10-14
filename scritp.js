@@ -152,12 +152,36 @@ function iniciarSesion() {
 
     const usuarioIngresado = document.querySelector("#username").value;
     const passwordIngresado = document.querySelector("#password").value;
+    const rolSeleccionado = document.querySelector("#regRole").value;
+
+    if (intentos >= maxIntentos) {
+        alert("Cuenta bloqueada. Has superado los intentos permitidos.");
+        return;
+    }
 
     if (usuarioIngresado === usuario && passwordIngresado === password) {
 
         acceso = true;
 
-        window.location.href = "estudiante.html";
+
+        switch (rolSeleccionado) {
+
+            case "estudiante":
+                window.location.href = "estudiante.html";
+                break;
+
+            case "profesor":
+                window.location.href = "profesor.html";
+                break;
+
+            case "administrador":
+                window.location.href = "administrador.html";
+                break;
+
+            default:
+                alert("Por favor selecciona un rol válido.");
+                break;
+        }
 
     } else {
 
@@ -166,15 +190,9 @@ function iniciarSesion() {
         alert("Usuario o contraseña incorrectos. Intento " +
               intentos + " de " + maxIntentos);
 
-        if (intentos >= maxIntentos) {
-            alert("Has superado el número máximo de intentos. Cuenta bloqueada.");
-
-            document.querySelector(".btn-login").disabled = true;
-        }
     }
 }
 
-// Detectar el formulario de inicio de sesión
 const formularioLogin = document.querySelector("#loginForm");
 
 if (formularioLogin) {

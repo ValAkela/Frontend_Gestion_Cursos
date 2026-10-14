@@ -1,4 +1,3 @@
-// Gestión del menú hamburguesa para login.html
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOverlay.addEventListener('click', closeMenu);
     }
 
-    // Cerrar con tecla Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeMenu();

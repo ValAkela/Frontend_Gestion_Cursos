@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Monsters University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img src="IMG/1x/LOGO BAR.png" alt="Monsters University" class="menu-logo">
+            <button class="close-menu-btn" id="closeMenuBtn" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <nav class="side-menu-nav">
+            <p class="menu-section-title">Navegación</p>
+            <ul>
+                <li><a href="index.html">Menú Principal (Inicio)</a></li>
+                <li><a href="#">Nuestra U</a></li>
+                <li><a href="#">Oferta Académica</a></li>
+                <li><a href="#">Admisiones</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html" class="active-link">Registrarse</a></li>
+            </ul>
+        </nav>
+        <div class="side-menu-footer">
+            <p>Monsters University &copy; 2026</p>
+        </div>
+    </aside>
+
+    <!-- CONTENEDOR PRINCIPAL DE REGISTRO -->
+    <main class="login-container register-container">
+        <div class="login-card register-card">
+            <!-- LOGO SUPERIOR -->
+            <div class="login-header">
+                <img src="IMG/1x/LOGO BAR.png" alt="Monsters University" class="login-brand-logo">
+                <h2>Crear Cuenta</h2>
+                <p>Únete a Monsters University y accede a todos nuestros servicios</p>
+            </div>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form class="login-form register-form" id="registerForm" onsubmit="event.preventDefault();">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regName">Nombre Completo</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="regName" placeholder="ej. James P. Sullivan" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Correo Electrónico</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="regEmail" placeholder="ej. sullivan@monsters.edu" required autocomplete="email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regFaculty">Facultad de Interés</label>
+                        <div class="input-wrapper">
+                            <select id="regFaculty" required>
+                                <option value="" disabled selected>Selecciona tu facultad</option>
+                                <option value="sustos">Facultad de Sustos (Scare Program)</option>
+                                <option value="ingenieria">Ingeniería de Puertas y Energía</option>
+                                <option value="scareonomics">Economía del Miedo (Scareonomics)</option>
+                                <option value="ciencias">Ciencias Monstruosas y Biología</option>
+                                <option value="artes">Artes del Rugido y Expresión</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regId">Documento de Identidad</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="regId" placeholder="ej. MU-84920" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="regPassword" placeholder="••••••••••••" required autocomplete="new-password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirmar Contraseña</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="regConfirmPassword" placeholder="••••••••••••" required autocomplete="new-password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-options register-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="termsCheck" required>
+                        <span>Acepto los <a href="#" class="terms-link">términos y políticas</a> de Monsters University</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-login btn-register">Registrarse</button>
+            </form>
+
+            <!-- PIE DE LA TARJETA -->
+            <div class="login-card-footer">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Iniciar Sesión</a></p>
+                <a href="index.html" class="back-home-link">← Volver al sitio principal</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="scritp.js"></script>
+</body>
+</html>
+

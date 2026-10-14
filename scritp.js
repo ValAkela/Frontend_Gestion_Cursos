@@ -82,6 +82,7 @@ function animarEntradaIndex() {
             easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
             fill: 'both'
         });
+    });
 
     // 3. Botón de Iniciar Sesión en el Navbar
     const navButton = document.querySelector('.navbar .btn-campus');
@@ -110,9 +111,6 @@ function animarEntradaIndex() {
             fill: 'both'
         });
     }
-    
-    
-});
 
   // 5. Título "Bienvenidos a" (fade in con elevación suave)
     const heroTitle = document.querySelector('.hero-content h1');
@@ -142,3 +140,48 @@ function animarEntradaIndex() {
         });
     }
 }
+
+
+const usuario = "adrian@cesde.net";
+const password = "1234";
+let intentos = 0;
+const maxIntentos = 3;
+let acceso = false;
+
+function iniciarSesion() {
+
+    const usuarioIngresado = document.querySelector("#username").value;
+    const passwordIngresado = document.querySelector("#password").value;
+
+    if (usuarioIngresado === usuario && passwordIngresado === password) {
+
+        acceso = true;
+
+        window.location.href = "estudiante.html";
+
+    } else {
+
+        intentos++;
+
+        alert("Usuario o contraseña incorrectos. Intento " +
+              intentos + " de " + maxIntentos);
+
+        if (intentos >= maxIntentos) {
+            alert("Has superado el número máximo de intentos. Cuenta bloqueada.");
+
+            document.querySelector(".btn-login").disabled = true;
+        }
+    }
+}
+
+// Detectar el formulario de inicio de sesión
+const formularioLogin = document.querySelector("#loginForm");
+
+if (formularioLogin) {
+    formularioLogin.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        iniciarSesion();
+    });
+}
+

@@ -82,7 +82,38 @@ function animarEntradaIndex() {
             easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
             fill: 'both'
         });
+
+    // 3. Botón de Iniciar Sesión en el Navbar
+    const navButton = document.querySelector('.navbar .btn-campus');
+    if (navButton) {
+        navButton.animate([
+            { opacity: 0, transform: 'scale(0.8) translateY(-10px)' },
+            { opacity: 1, transform: 'scale(1) translateY(0)' }
+        ], {
+            duration: 700,
+            delay: 600,
+            easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+            fill: 'both'
+        });
+    }
+
+    // 4. Imagen de Mike y Sulley (deslizamiento dinámico desde la izquierda)
+    const charactersImg = document.querySelector('.hero-image .characters-img');
+    if (charactersImg) {
+        charactersImg.animate([
+            { opacity: 0, transform: 'translateX(-90px) scale(0.92)' },
+            { opacity: 1, transform: 'translateX(0) scale(1)' }
+        ], {
+            duration: 1100,
+            delay: 250,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            fill: 'both'
+        });
+    }
+    
     
 });
+
+
 
 }

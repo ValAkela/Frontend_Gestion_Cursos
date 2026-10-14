@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Virtual - Monsters University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú de navegación">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <aside class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <img src="IMG/1x/LOGO BAR.png" alt="Monsters University" class="menu-logo">
+            <button class="close-menu-btn" id="closeMenuBtn" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <nav class="side-menu-nav">
+            <p class="menu-section-title">Navegación</p>
+            <ul>
+                <li><a href="index.html">Menú Principal (Inicio)</a></li>
+                <li><a href="#">Nuestra U</a></li>
+                <li><a href="#">Oferta Académica</a></li>
+                <li><a href="#">Admisiones</a></li>
+                <li><a href="login.html" class="active-link">Campus Virtual</a></li>
+            </ul>
+        </nav>
+        <div class="side-menu-footer">
+            <p>Monsters University &copy; 2026</p>
+        </div>
+    </aside>
+
+    <main class="login-container">
+        <div class="login-card">
+            <!-- LOGO SUPERIOR -->
+            <div class="login-header">
+                <img src="IMG/1x/LOGO BAR.png" alt="Monsters University" class="login-brand-logo">
+                <h2>Campus Virtual</h2>
+                <p>Ingresa tus credenciales para acceder a la plataforma</p>
+            </div>
+
+            <form class="login-form" id="loginForm" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="username">Código o Correo Estudiantil</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" placeholder="ej. wazowski@monsters.edu" required autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="••••••••••••" required autocomplete="current-password">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Recordar sesión</span>
+                    </label>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Ingresar al Campus</button>
+            </form>
+
+            <div class="login-card-footer">
+                <p>¿Aún no tienes cuenta? <a href="#">Registrase</a></p>
+                <a href="index.html" class="back-home-link">← Volver al sitio principal</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="scritp.js"></script>
+</body>
+</html>
+

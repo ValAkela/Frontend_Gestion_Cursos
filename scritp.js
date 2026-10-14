@@ -114,6 +114,31 @@ function animarEntradaIndex() {
     
 });
 
+  // 5. Título "Bienvenidos a" (fade in con elevación suave)
+    const heroTitle = document.querySelector('.hero-content h1');
+    if (heroTitle) {
+        heroTitle.animate([
+            { opacity: 0, transform: 'translateY(35px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+        ], {
+            duration: 800,
+            delay: 450,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            fill: 'both'
+        });
+    }
 
-
+    // 6. Logo grande central de Monsters University (efecto zoom/pop)
+    const heroLogo = document.querySelector('.hero-content .hero-logo');
+    if (heroLogo) {
+        heroLogo.animate([
+            { opacity: 0, transform: 'scale(0.65) translateY(20px)' },
+            { opacity: 1, transform: 'scale(1) translateY(0)' }
+        ], {
+            duration: 950,
+            delay: 650,
+            easing: 'cubic-bezier(0.34, 1.4, 0.64, 1)',
+            fill: 'both'
+        });
+    }
 }

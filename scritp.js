@@ -43,5 +43,46 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         }
     });
+
+    
+     
+    // ANIMACIÓN DE ENTRADA PARA INDEX.HTML
+    
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        animarEntradaIndex();
+    }
 });
 
+
+function animarEntradaIndex() {
+      // 1. Logo superior izquierdo del Navbar
+     const navLogo = document.querySelector('.navbar .logo-container');
+     if (navLogo) {
+        navLogo.animate([
+            { opacity: 0, transform: 'translateY(-30px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+        ], {
+            duration: 750,
+            delay: 100,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            fill: 'both'
+        });
+    }
+
+    // 2. Enlaces del menú de navegación (efecto cascada / stagger)
+    const navLinks = document.querySelectorAll('.navbar .nav-links li');
+    navLinks.forEach((item, index) => {
+        item.animate([
+            { opacity: 0, transform: 'translateY(-20px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+        ], {
+            duration: 650,
+            delay: 200 + (index * 120),
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            fill: 'both'
+        });
+    
+});
+
+}

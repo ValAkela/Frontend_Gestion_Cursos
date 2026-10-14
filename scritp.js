@@ -44,9 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-     // ==========================================
+    
+     
     // ANIMACIÓN DE ENTRADA PARA INDEX.HTML
-    // ==========================================
+    
     const hero = document.querySelector('.hero');
     if (hero) {
         animarEntradaIndex();

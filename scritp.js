@@ -98,7 +98,7 @@ function animarEntradaIndex() {
         });
     }
 
-    // 4. Imagen de Mike y Sulley (deslizamiento dinámico desde la izquierda)
+    // 4. Imagen principal (deslizamiento dinámico desde la izquierda)
     const charactersImg = document.querySelector('.hero-image .characters-img');
     if (charactersImg) {
         charactersImg.animate([
@@ -126,7 +126,7 @@ function animarEntradaIndex() {
         });
     }
 
-    // 6. Logo grande central de Monsters University (efecto zoom/pop)
+    // 6. Logo central (efecto zoom/pop)
     const heroLogo = document.querySelector('.hero-content .hero-logo');
     if (heroLogo) {
         heroLogo.animate([

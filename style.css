@@ -10,7 +10,6 @@
 
 body {
     background-color: #ffffff;
-    /* Aseguramos que el body ocupe toda la altura de la pantalla */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,64 +24,23 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px; /* Más padding para pantallas grandes */
+    padding: 30px 100px; 
     background-color: #ffffff;
     max-width: 1920px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* Placeholders styles */
-.placeholder-logo {
-    width: 300px; 
-    height: 90px;
-    background-color: #f3f4f6;
-    border: 2px dashed #9ca3af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.placeholder-characters {
-    width: 600px;
-    height: 700px;
-    background-color: #f3f4f6;
-    border: 2px dashed #9ca3af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    font-weight: bold;
-    text-align: center;
-}
-
-.placeholder-hero-logo {
-    width: 500px;
-    height: 150px;
-    background-color: #f3f4f6;
-    border: 2px dashed #9ca3af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    font-weight: bold;
-    margin-bottom: 40px;
-    font-size: 1.5rem;
-}
-
 /* Nav Links */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px; /* Más separación */
+    gap: 40px; 
 }
 
 .nav-links a {
-    color: #4b8cb6; /* Light blue */
-    font-size: 1.4rem; /* Fuente más grande para 1080p */
+    color: #4b8cb6; 
+    font-size: 1.4rem; 
     text-decoration: underline;
     text-underline-offset: 6px;
     text-decoration-thickness: 1px;
@@ -93,28 +51,28 @@ a {
 }
 
 /* Buttons */
-.btn-campus {
+.btn-iniciar-sesion {
     background-color: #00609c;
     color: white;
-    padding: 15px 30px; /* Botón más grande */
+    padding: 15px 30px; 
     border-radius: 10px;
     font-weight: 700;
-    font-size: 1.2rem; /* Fuente más grande */
+    font-size: 1.2rem; 
     transition: background-color 0.3s;
 }
 
-.btn-campus:hover {
+.btn-iniciar-sesion:hover {
     background-color: #004675;
 }
 
 .btn-outline {
     background-color: #ffffff;
     color: #00609c;
-    padding: 15px 30px; /* Botón más grande */
+    padding: 15px 30px; 
     border: 2px solid #00609c;
     border-radius: 10px;
     font-weight: 700;
-    font-size: 1.2rem; /* Fuente más grande */
+    font-size: 1.2rem; 
     transition: all 0.3s;
 }
 
@@ -126,11 +84,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 100px; /* Padding ajustado a los lados */
-    max-width: 1700px; /* Más ancho para 1920 */
+    padding: 40px 100px; 
+    max-width: 1700px; 
     margin: 0 auto;
-    gap: 100px; /* Más separación entre imagen y contenido */
-    flex: 1; /* Ocupa el espacio restante del viewport */
+    gap: 100px; 
+    flex: 1; 
 }
 
 .hero-image {
@@ -142,7 +100,7 @@ a {
 .characters-img {
     max-width: 100%;
     height: auto;
-    max-height: 800px; /* Más alto para que se vea bien en 1080p */
+    max-height: 800px; 
     object-fit: contain;
 }
 
@@ -155,7 +113,7 @@ a {
 }
 
 .hero-content h1 {
-    font-size: 5rem; /* Título más imponente */
+    font-size: 5rem; 
     color: #00609c;
     margin-bottom: 20px;
     font-weight: 900;
@@ -163,7 +121,7 @@ a {
 
 .hero-actions {
     display: flex;
-    gap: 30px; /* Más separación entre los botones */
+    gap: 30px; 
 }
 
 /* Responsive */
@@ -268,7 +226,7 @@ a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 92, 212, 0.5);
     backdrop-filter: blur(3px);
     opacity: 0;
     visibility: hidden;
@@ -646,4 +604,252 @@ a {
         padding: 30px 20px;
     }
 }
+
+/* =========================================
+   ESTILOS PARA DASHBOARD ESTUDIANTE
+   ========================================= */
+
+.dashboard-body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Barra lateral azul */
+.dashboard-sidebar {
+    width: 280px;
+    min-width: 280px;
+    background-color: #0077c8;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px 25px 35px 25px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Perfil de Mike */
+.sidebar-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3.5px solid #ffffff;
+    object-fit: cover;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.profile-name {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* Menú de navegación lateral */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateX(4px);
+}
+
+.sidebar-link.active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-link .nav-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+    flex-shrink: 0;
+}
+
+/* Botón Salir */
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.logout-link:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+    transform: translateX(4px);
+}
+
+.logout-link .nav-icon {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+    flex-shrink: 0;
+}
+
+/* Área principal del Dashboard */
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    background-color: #ffffff;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.main-logo-mu {
+    width: 165px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Contenido de bienvenida y tarjetas */
+.dashboard-content {
+    max-width: 1200px;
+}
+
+.welcome-banner h1 {
+    font-size: 2.3rem;
+    color: #005696;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.welcome-banner p {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.dashboard-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.dash-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dash-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+}
+
+.card-header-icon {
+    font-size: 2rem;
+    background: #e0f0fe;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-info h3 {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.card-highlight {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #005696;
+}
+
+.card-subtext {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Responsividad para móviles y tablets */
+@media (max-width: 900px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 30px 20px;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .dashboard-main {
+        padding: 30px 20px;
+    }
+
+    .dashboard-header {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
 

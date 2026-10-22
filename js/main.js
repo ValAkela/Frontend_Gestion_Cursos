@@ -152,7 +152,7 @@ function iniciarSesion() {
 
     const usuarioIngresado = document.querySelector("#username").value;
     const passwordIngresado = document.querySelector("#password").value;
-    const rolSeleccionado = document.querySelector("#regRole").value;
+    const rolSeleccionado = document.querySelector("#role").value;
 
     if (intentos >= maxIntentos) {
         alert("Cuenta bloqueada. Has superado los intentos permitidos.");

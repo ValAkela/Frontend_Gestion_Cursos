@@ -6,6 +6,17 @@ const inputId = document.querySelector('#regId');
 const inputPassword = document.querySelector('#regPassword');
 const selectRole = document.querySelector('#regRole');
 
+const STORAGE_KEY = 'usuariosRegistrados';
+
+function usuariosRegistrados() {
+    const datos = localStorage.getItem(STORAGE_KEY);
+    return datos ? JSON.parse(datos) : [];
+}
+
+function guardarUsuarios(usuarios) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
+}
+
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -27,7 +38,9 @@ formulario.addEventListener('submit', (e) => {
         rol: rol
     };
 
-    localStorage.setItem('registroNuevo', JSON.stringify(nuevoUsuario));
+    const usuarios = usuariosRegistrados();
+    usuarios.push(nuevoUsuario);
+    guardarUsuarios(usuarios);
 
     inputName.value = '';
     inputEmail.value = '';

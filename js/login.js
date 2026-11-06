@@ -4,28 +4,33 @@ const password = "1234";
 
 
 
+let intentos = 0;
+const maxIntentos = 3;
+
 function iniciarSesion() {
     
     const usuarioIngresado = document.querySelector("#username").value.trim();
     const passwordIngresado = document.querySelector("#password").value.trim();
     const rolSeleccionado = document.querySelector("#role").value;
-    let intentos = 0;
-    const maxIntentos = 3;
     let acceso = false;
 
-    const usuarioValido = JSON.parse(localStorage.getItem('registroNuevo'));
+    const usuariosGuardados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
 
     if (intentos >= maxIntentos) {
         alert("Cuenta bloqueada. Has superado los intentos permitidos.");
         return;
     }
 
-        if (usuarioValido === null) {
+    if (usuariosGuardados.length === 0) {
         alert("No hay usuarios registrados.");
         return;
     }    
 
-    if (usuarioIngresado === usuarioValido.email && passwordIngresado === usuarioValido.contraseña) {
+    const usuarioValido = usuariosGuardados.find(usuario => 
+        usuario.email === usuarioIngresado && usuario.contraseña === passwordIngresado
+    );
+
+    if (usuarioValido) {
 
         acceso = true;
 

@@ -1,21 +1,31 @@
-const usuario = "adrian@cesde.net";
+/*const usuario = "adrian@cesde.net";
 const password = "1234";
-let intentos = 0;
-const maxIntentos = 3;
-let acceso = false;
+*/
+
+
 
 function iniciarSesion() {
-
-    const usuarioIngresado = document.querySelector("#username").value;
-    const passwordIngresado = document.querySelector("#password").value;
+    
+    const usuarioIngresado = document.querySelector("#username").value.trim();
+    const passwordIngresado = document.querySelector("#password").value.trim();
     const rolSeleccionado = document.querySelector("#role").value;
+    let intentos = 0;
+    const maxIntentos = 3;
+    let acceso = false;
+
+    const usuarioValido = JSON.parse(localStorage.getItem('registroNuevo'));
 
     if (intentos >= maxIntentos) {
         alert("Cuenta bloqueada. Has superado los intentos permitidos.");
         return;
     }
 
-    if (usuarioIngresado === usuario && passwordIngresado === password) {
+        if (usuarioValido === null) {
+        alert("No hay usuarios registrados.");
+        return;
+    }    
+
+    if (usuarioIngresado === usuarioValido.email && passwordIngresado === usuarioValido.contraseña) {
 
         acceso = true;
 

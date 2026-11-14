@@ -9,12 +9,10 @@ const maxIntentos = 3;
 
 function iniciarSesion() {
     
-    const usuarioIngresado = document.querySelector("#username").value.trim();
-    const passwordIngresado = document.querySelector("#password").value.trim();
+    const usuarioIngresado = document.querySelector("#username").value.trim().toLowerCase();
+    const passwordIngresado = document.querySelector("#password").value;
     const rolSeleccionado = document.querySelector("#role").value;
-    let acceso = false;
-
-    const usuariosGuardados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
+    const usuariosGuardados = obtenerUsuariosRegistrados();
 
     if (intentos >= maxIntentos) {
         alert("Cuenta bloqueada. Has superado los intentos permitidos.");
@@ -27,13 +25,14 @@ function iniciarSesion() {
     }    
 
     const usuarioValido = usuariosGuardados.find(usuario => 
-        usuario.email === usuarioIngresado && usuario.contraseña === passwordIngresado
+        usuario.email.toLowerCase() === usuarioIngresado &&
+        usuario.contraseña === passwordIngresado &&
+        usuario.rol === rolSeleccionado
     );
 
     if (usuarioValido) {
-
-        acceso = true;
-
+        intentos = 0;
+        sessionStorage.setItem('usuarioActivo', JSON.stringify(usuarioValido));
 
         switch (rolSeleccionado) {
 
@@ -69,12 +68,17 @@ document.addEventListener("DOMContentLoaded", function() {
 const formularioLogin = document.querySelector("#loginForm");
 
 if (formularioLogin) {
-    formularioLogin.addEventListener("submit", function(event) {
+    formularioLogin.addEventListener("submit", async function(event) {
         event.preventDefault();
 
-         console.log("Formulario de login detectado");
+        try {
+            await usuariosListos;
+            iniciarSesion();
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error);
+            alert("No se pudieron cargar los usuarios. Comprueba que estás usando Live Server y que existe .vscode/profesores.json.");
+        }
 
-        iniciarSesion();
     });
 } else {
         console.error("No se encontró el formulario loginForm");

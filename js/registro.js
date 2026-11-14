@@ -4,32 +4,49 @@ const inputEmail = document.querySelector('#regEmail');
 const selectFacultad = document.querySelector('#regFaculty');
 const inputId = document.querySelector('#regId');
 const inputPassword = document.querySelector('#regPassword');
+const inputConfirmPassword = document.querySelector('#regConfirmPassword');
 const selectRole = document.querySelector('#regRole');
 
-const STORAGE_KEY = 'usuariosRegistrados';
-
-function usuariosRegistrados() {
-    const datos = localStorage.getItem(STORAGE_KEY);
-    return datos ? JSON.parse(datos) : [];
-}
-
-function guardarUsuarios(usuarios) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
-}
-
-formulario.addEventListener('submit', (e) => {
+formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    
+    try {
+        await usuariosListos;
+    } catch (error) {
+        console.error('Error al cargar los usuarios iniciales:', error);
+        alert('No se pudieron cargar los usuarios. Comprueba que estás usando Live Server y que existe .vscode/profesores.json.');
+        return;
+    }
 
     const nombre = inputName.value.trim();
-    const email = inputEmail.value.trim();
+    const email = inputEmail.value.trim().toLowerCase();
     const facultad = selectFacultad.value;
     const documento = inputId.value.trim();
-    const contraseña = inputPassword.value.trim(); 
+    const contraseña = inputPassword.value;
+    const confirmarContraseña = inputConfirmPassword.value;
     const rol = selectRole.value;
 
+    if (contraseña !== confirmarContraseña) {
+        alert('Las contraseñas no coinciden.');
+        return;
+    }
+
+    let usuarios;
+    try {
+        usuarios = obtenerUsuariosRegistrados();
+    } catch (error) {
+        console.error('Error al leer los usuarios guardados:', error);
+        alert('No se pudieron leer los usuarios guardados.');
+        return;
+    }
+
+    if (usuarios.some(usuario => usuario.email.toLowerCase() === email)) {
+        alert('Ya existe una cuenta con ese correo electrónico.');
+        return;
+    }
+
     const nuevoUsuario = {
+        id: Date.now(),
         nombre: nombre,
         email: email,
         facultad: facultad, 
@@ -38,15 +55,15 @@ formulario.addEventListener('submit', (e) => {
         rol: rol
     };
 
-    const usuarios = usuariosRegistrados();
     usuarios.push(nuevoUsuario);
-    guardarUsuarios(usuarios);
+    guardarUsuariosRegistrados(usuarios);
 
     inputName.value = '';
     inputEmail.value = '';
     selectFacultad.value = '';
     inputId.value = '';
     inputPassword.value = '';
+    inputConfirmPassword.value = '';
     selectRole.value = '';
 
 

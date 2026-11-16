@@ -1,17 +1,5 @@
 [
   {
-    "id": 1,
-    "nombre": "Valeria Alvarez",
-    "email": "valeria@correo.com",
-    "password": "1234"
-  },
-  {
-    "id": 2,
-    "nombre": "Adrian Chavarria",
-    "email": "adrian@correo.com",
-    "password": "abcd"
-  },
-  {
     "id": 3,
     "nombre": "Leinner Giraldo",
     "email": "leinner@correo.com",

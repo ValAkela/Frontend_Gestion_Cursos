@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenuBtn = document.getElementById('closeMenuBtn');
     const sideMenu = document.getElementById('sideMenu');
     const menuOverlay = document.getElementById('menuOverlay');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
     function openMenu() {
         if (sideMenu && menuOverlay && hamburgerBtn) {
@@ -139,6 +140,18 @@ function animarEntradaIndex() {
             fill: 'both'
         });
     }
+
+    const listaNavegacion = document.querySelector('.nav-links');
+    const itemAdmisiones = document.createElement('li');
+    const enlaceAdmisiones = document.createElement('a');
+
+    enlaceAdmisiones.href = '#';
+    enlaceAdmisiones.id = 'nav-admisiones';
+    enlaceAdmisiones.textContent = 'Admisiones';
+
+    itemAdmisiones.appendChild(enlaceAdmisiones);
+    listaNavegacion.appendChild(itemAdmisiones);
+
 }
 
 

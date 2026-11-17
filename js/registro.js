@@ -67,7 +67,7 @@ formulario.addEventListener('submit', async (e) => {
     selectRole.value = '';
 
 
-    alert('Registro exitoso. ¡Bienvenido!' + nombre + '!');
+    alert('Registro exitoso. ¡Bienvenido!' + " " + nombre + " " + '!');
 
     
 })

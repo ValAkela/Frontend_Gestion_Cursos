@@ -14,7 +14,7 @@ formulario.addEventListener('submit', async (e) => {
         await usuariosListos;
     } catch (error) {
         console.error('Error al cargar los usuarios iniciales:', error);
-        alert('No se pudieron cargar los usuarios. Comprueba que estás usando Live Server y que existe .vscode/profesores.json.');
+        mostrarMensaje(formulario, 'No se pudieron cargar los usuarios. Comprueba que estás usando Live Server y que existe .vscode/profesores.json.');
         return;
     }
 
@@ -27,7 +27,7 @@ formulario.addEventListener('submit', async (e) => {
     const rol = selectRole.value;
 
     if (contraseña !== confirmarContraseña) {
-        alert('Las contraseñas no coinciden.');
+        mostrarMensaje(formulario, 'Las contraseñas no coinciden.');
         return;
     }
 
@@ -36,12 +36,12 @@ formulario.addEventListener('submit', async (e) => {
         usuarios = obtenerUsuariosRegistrados();
     } catch (error) {
         console.error('Error al leer los usuarios guardados:', error);
-        alert('No se pudieron leer los usuarios guardados.');
+        mostrarMensaje(formulario, 'No se pudieron leer los usuarios guardados.');
         return;
     }
 
     if (usuarios.some(usuario => usuario.email.toLowerCase() === email)) {
-        alert('Ya existe una cuenta con ese correo electrónico.');
+        mostrarMensaje(formulario, 'Ya existe una cuenta con ese correo electrónico.');
         return;
     }
 
@@ -67,7 +67,13 @@ formulario.addEventListener('submit', async (e) => {
     selectRole.value = '';
 
 
-    alert('Registro exitoso. ¡Bienvenido!' + nombre + '!');
+    mostrarMensaje(formulario, 'Registro exitoso. ¡Bienvenido, ' + nombre + '!', 'exito');
 
     
 })
+
+const encabezadoRegistro = document.querySelector('.login-header');
+const descripcionRegistro = document.createElement('p');
+
+descripcionRegistro.textContent = 'Únete a Monsters University y accede a todos nuestros servicios';
+encabezadoRegistro.appendChild(descripcionRegistro);

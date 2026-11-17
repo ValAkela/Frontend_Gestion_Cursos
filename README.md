@@ -9,6 +9,7 @@ Interfaz web para la gestión de cursos y carreras, con paneles diferenciados se
 - Panel de **profesor**
 - Panel de **estudiante**
 - Diseño con HTML, CSS y JavaScript puro (sin frameworks)
+- Almacenamiento de datos de en LocalStorage
 
 ## Tecnologías
 

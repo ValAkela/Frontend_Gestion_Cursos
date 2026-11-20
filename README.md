@@ -1,15 +1,14 @@
 # Frontend_Gestion_Cursos
 
-Interfaz web para la gestión de cursos y carreras, con paneles diferenciados según el rol del usuario: administrador, profesor y estudiante.
+Interfaz web para gestionar cursos y carreras, con paneles diferenciados para administradores, profesores y estudiantes.
 
 ## Características
 
-- Inicio de sesión y registro de usuarios
-- Panel de **administrador** con menú lateral: Cursos y Carreras, Reportes y Configuración
-- Panel de **profesor**
-- Panel de **estudiante**
-- Diseño con HTML, CSS y JavaScript puro (sin frameworks)
-- Almacenamiento de datos de en LocalStorage
+- Inicio de sesión y registro de usuarios.
+- Panel de administración para cursos, carreras, reportes y configuración.
+- Paneles para profesores y estudiantes.
+- Almacenamiento de datos en `LocalStorage`.
+- Desarrollado con HTML, CSS y JavaScript, sin frameworks.
 
 ## Tecnologías
 
@@ -17,47 +16,17 @@ Interfaz web para la gestión de cursos y carreras, con paneles diferenciados se
 - CSS3
 - JavaScript
 
-## Estructura del proyecto
+## Estructura
 
-```
+```text
 Frontend_Gestion_Cursos/
-├── css/                # Hojas de estilo
-├── img/                # Imágenes y recursos gráficos
-├── js/                 # Scripts de la aplicación
-├── index.html          # Página de inicio
-├── login.html          # Inicio de sesión
-├── registro.html       # Registro de usuarios
-├── administrador.html  # Panel del administrador
-├── profesor.html       # Panel del profesor
-├── estudiante.html     # Panel del estudiante
+├── css/
+├── img/
+├── js/
+├── index.html
+├── login.html
+├── registro.html
+├── administrador.html
+├── profesor.html
+├── estudiante.html
 └── README.md
-```
-
-## Instalación
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com//Frontend_Gestion_Cursos.git
-   cd Frontend_Gestion_Cursos
-   ```
-
-2. Abre `index.html` en tu navegador, o usa la extensión **Live Server** de VS Code (clic derecho sobre `index.html` → "Open with Live Server").
-
-## Uso
-
-1. Entra a `index.html` y ve a **Iniciar sesión** o **Registro**.
-2. Según tu rol, accederás al panel de administrador, profesor o estudiante.
-3. Desde el panel de administrador puedes gestionar cursos y carreras, consultar reportes y ajustar la configuración.
-
-## Estado del proyecto
-
-En desarrollo.
-
-## Contribuir
-
-Las contribuciones son bienvenidas. Abre un *issue* para proponer cambios o envía un *pull request*.
-
-## Licencia
-
-Por definir.

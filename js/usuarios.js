@@ -85,3 +85,14 @@ usuariosListos
         console.error("Error al inicializar usuarios:", error);
     });
 
+function mostrarMensaje(formulario, texto, tipo = 'error') {
+    let mensaje = formulario.querySelector('.mensaje-form');
+    if (!mensaje) {
+        mensaje = document.createElement('div');
+        mensaje.className = 'mensaje-form';
+        formulario.insertBefore(mensaje, formulario.querySelector('button[type="submit"]'));
+    }
+    mensaje.textContent = texto;
+    mensaje.className = `mensaje-form visible ${tipo}`;
+}
+

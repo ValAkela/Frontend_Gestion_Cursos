@@ -15,12 +15,12 @@ function iniciarSesion() {
     const usuariosGuardados = obtenerUsuariosRegistrados();
 
     if (intentos >= maxIntentos) {
-        alert("Cuenta bloqueada. Has superado los intentos permitidos.");
+        mostrarMensaje(document.querySelector("#loginForm"), "Cuenta bloqueada. Has superado los intentos permitidos.");
         return;
     }
 
     if (usuariosGuardados.length === 0) {
-        alert("No hay usuarios registrados.");
+        mostrarMensaje(document.querySelector("#loginForm"), "No hay usuarios registrados.");
         return;
     }    
 
@@ -49,7 +49,7 @@ function iniciarSesion() {
                 break;
 
             default:
-                alert("Por favor selecciona un rol válido.");
+                mostrarMensaje(document.querySelector("#loginForm"), "Por favor selecciona un rol válido.");
                 break;
         }
 
@@ -57,7 +57,7 @@ function iniciarSesion() {
 
         intentos++;
 
-        alert("Usuario o contraseña incorrectos. Intento " +
+        mostrarMensaje(document.querySelector("#loginForm"), "Usuario o contraseña incorrectos. Intento " +
               intentos + " de " + maxIntentos);
 
     }
@@ -76,7 +76,7 @@ if (formularioLogin) {
             iniciarSesion();
         } catch (error) {
             console.error("Error al iniciar sesión:", error);
-            alert("No se pudieron cargar los usuarios. Comprueba que estás usando Live Server y que existe .vscode/profesores.json.");
+            mostrarMensaje(formularioLogin, "No se pudieron cargar los usuarios.");
         }
 
     });
